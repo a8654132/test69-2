@@ -51,16 +51,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						log.Print(err)
 					}
 			}
-			if message.Text == "追不到" {
-				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("YEAH")).Do(); err != nil {
-						log.Print(err)
-					}
-				}
-					if message.Text == "台大" {
-						if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("游采青")).Do(); err != nil {
-								log.Print(err)
-							}
-			}
+			
 
 	}
 }
