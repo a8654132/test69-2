@@ -39,12 +39,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			if message.Text == "莊于鋅" {
-				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTemplateMessage("低能兒")).Do(); err != nil {
+				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("低能兒")).Do(); err != nil {
 						log.Print(err)
 					}
 			}
 			if message.Text == "抽" {
-				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTemplateMessage("抽三小")).Do(); err != nil {
+				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("抽三小")).Do(); err != nil {
 						log.Print(err)
 					}
 			}
