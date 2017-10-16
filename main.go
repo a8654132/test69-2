@@ -38,6 +38,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	// defer cancel()
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
+
+			switch message := event.Message.(type) {
+			case *linebot.TextMessage:
 			if message.Text == "莊于鋅" {
 				if _, err := bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("低能兒")).Do(); err != nil {
 						log.Print(err)
@@ -48,6 +51,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 						log.Print(err)
 					}
 			}
+
+
+
 		}
 	}
 }
